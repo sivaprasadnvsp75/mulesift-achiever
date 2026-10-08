@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="cedc1f27-70ef-4caf-8712-1d1c8994e278" >
+		<http:listener-connection host="localhost" port="8081" />
+	</http:listener-config>
+	<flow name="mule-implement-1Flow" doc:id="aa034660-b7d7-4725-82e2-4f3b9e079923" >
+		<http:listener doc:name="Listener" doc:id="529af352-c420-44ca-b77e-f6f1270a8671" config-ref="HTTP_Listener_config" path="/achivers"/>
+		<logger level="INFO" doc:name="start Logger" doc:id="7a49997d-989b-4078-83f3-b0f57cc656c5" message="Achivers Logger started"/>
+	</flow>
+</mule>
